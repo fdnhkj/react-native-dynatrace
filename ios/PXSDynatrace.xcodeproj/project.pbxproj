@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B3E7B58A1CC2AC0600A0062D /* PXSDynatrace.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* PXSDynatrace.m */; };
+		BF5976D91E3FFCC80049B951 /* libDynatraceUEM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5976D81E3FFCC80049B951 /* libDynatraceUEM.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +27,8 @@
 		134814201AA4EA6300B7C361 /* libPXSDynatrace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPXSDynatrace.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* PXSDynatrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXSDynatrace.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* PXSDynatrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXSDynatrace.m; sourceTree = "<group>"; };
+		BF5976D71E3FFCC80049B951 /* DynatraceUEM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynatraceUEM.h; sourceTree = "<group>"; };
+		BF5976D81E3FFCC80049B951 /* libDynatraceUEM.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDynatraceUEM.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5976D91E3FFCC80049B951 /* libDynatraceUEM.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,10 +54,20 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				B3E7B5881CC2AC0600A0062D /* PXSDynatrace.h */,
-				B3E7B5891CC2AC0600A0062D /* PXSDynatrace.m */,
+				BF5976DA1E3FFF400049B951 /* PXSDynatrace */,
+				BF5976D71E3FFCC80049B951 /* DynatraceUEM.h */,
+				BF5976D81E3FFCC80049B951 /* libDynatraceUEM.a */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		BF5976DA1E3FFF400049B951 /* PXSDynatrace */ = {
+			isa = PBXGroup;
+			children = (
+				B3E7B5881CC2AC0600A0062D /* PXSDynatrace.h */,
+				B3E7B5891CC2AC0600A0062D /* PXSDynatrace.m */,
+			);
+			name = PXSDynatrace;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,12 +211,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
+					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../../react-native/Libraries/**",
 				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = PXSDynatrace;
 				SKIP_INSTALL = YES;
@@ -217,8 +236,13 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../../react-native/Libraries/**",
 				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = PXSDynatrace;
 				SKIP_INSTALL = YES;
