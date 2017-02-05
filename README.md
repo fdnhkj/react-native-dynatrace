@@ -42,4 +42,14 @@ import PXSDynatrace from 'react-native-dynatrace';
 // TODO: What do with the module?
 PXSDynatrace;
 ```
-  
+
+## TODO
+- Possibility to get an action in JS side
+	- Invalid type in JSON Write (UEMAction) - see screenshot `RCTJSONStringify-UEMAction-issue.png`
+	- convert UEMAction to a NSDictionary
+	- Useful links
+		- https://github.com/wmcmahan/react-native-calendar-events/blob/master/RNCalendarEvents.m#L84
+		- https://github.com/Microsoft/react-native-code-push/blob/master/ios/CodePush/CodePushConfig.m
+		- https://facebook.github.io/react-native/docs/native-modules-ios.html
+		- https://community.dynatrace.com/community/display/DOCDT63/Android+ADK+Setup+and+Instrumentation
+		- https://community.dynatrace.com/community/display/DOCDT63/iOS+ADK+Setup+and+Instrumentation
