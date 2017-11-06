@@ -4,12 +4,14 @@
 
 #import <React/RCTLog.h>
 
-@implementation PXSDynatrace RCT_EXPORT_MODULE()
+@implementation PXSDynatrace
 
 - (dispatch_queue_t)methodQueue
 {
     return dispatch_get_main_queue();
 }
+
+RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(startup:(NONNULL NSString *)appId
                   serverURL:(NONNULL NSString *)serverURL)
