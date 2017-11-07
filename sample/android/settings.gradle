@@ -1,0 +1,5 @@
+rootProject.name = 'SampleDynatrace'
+include ':react-native-dynatrace'
+project(':react-native-dynatrace').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-dynatrace/android')
+
+include ':app'

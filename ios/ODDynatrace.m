@@ -1,10 +1,15 @@
+//
+//  ODDynatrace.m
+//  ODDynatrace
+//
+//  Created by OLIVIER DEMOLLIENS on 01/11/2017.
+//  Copyright © 2017 DEMOLLIENS. All rights reserved.
+//
 
-#import "PXSDynatrace.h"
+#import "ODDynatrace.h"
 #import "DynatraceUEM.h"
 
-#import <React/RCTLog.h>
-
-@implementation PXSDynatrace
+@implementation ODDynatrace
 
 - (dispatch_queue_t)methodQueue
 {
@@ -17,11 +22,10 @@ RCT_EXPORT_METHOD(startup:(NONNULL NSString *)appId
                   serverURL:(NONNULL NSString *)serverURL)
 {
     CPWR_StatusCode statusCode = [DynatraceUEM startupWithApplicationName:appId
-                             serverURL:serverURL
-                             allowAnyCert:NO
-                             certificatePath:nil
-    ];
-    RCTLogInfo(@"Dynatrace startup status code = %d", statusCode);
+                                                                serverURL:serverURL
+                                                             allowAnyCert:NO
+                                                          certificatePath:nil
+                                  ];
 }
 
 RCT_EXPORT_METHOD(shutdown)
@@ -37,3 +41,4 @@ RCT_EXPORT_METHOD(enterAction:(NONNULL NSString *)actionName)
 }
 
 @end
+
