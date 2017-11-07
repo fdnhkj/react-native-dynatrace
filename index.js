@@ -1,6 +1,6 @@
 
 import { NativeModules } from 'react-native';
 
-const { PXSDynatrace } = NativeModules;
+const { ODDynatrace } = NativeModules;
 
-export default PXSDynatrace;
+export default ODDynatrace;
