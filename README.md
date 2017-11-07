@@ -15,15 +15,15 @@
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-dynatrace` and add `PXSDynatrace.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libPXSDynatrace.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+2. Go to `node_modules` ➜ `react-native-dynatrace` and add `ODDynatrace.xcodeproj`
+3. In XCode, in the project navigator, select your project. Add `libODDynatrace.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.PXSDynatracePackage;` to the imports at the top of the file
-  - Add `new PXSDynatracePackage()` to the list returned by the `getPackages()` method
+  - Add `import com.odemolliens.rn.dynatrace.ODDynatracePackage;` to the imports at the top of the file
+  - Add `new ODDynatracePackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
   	include ':react-native-dynatrace'
@@ -34,14 +34,41 @@
       compile project(':react-native-dynatrace')
   	```
 
+4. Insert the following lines inside the AndroidManifest file :
+  	```
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.INTERNET" />
+  	```
+
 
 ## Usage
-```javascript
-import PXSDynatrace from 'react-native-dynatrace';
 
-// TODO: What do with the module?
-PXSDynatrace;
+### Import
+
+```javascript
+import ODDynatrace from 'react-native-dynatrace';
 ```
+
+### Setup instance
+
+```javascript
+ODDynatrace.startup("APPLICATION_ID","INSTANCE_URL");
+```
+
+
+## Changelog
+
+#### Version 0.0.2
+ - Fix version of RN
+ - Fix version of Gradle tools
+ - Fix version of Android tools
+ - Fix iOS build
+ - Added a sample project
+ - Update documentation
+
+
+#### Version 0.0.1
+ - First version
 
 ## TODO
 - Possibility to get an action in JS side

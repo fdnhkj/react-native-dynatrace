@@ -1,10 +1,11 @@
+
 buildscript {
     repositories {
         jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.android.tools.build:gradle:2.3.3'
     }
 }
 
@@ -12,22 +13,18 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '25.0.0'
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
-        ndk {
-            abiFilters "armeabi-v7a", "x86"
-        }
     }
     lintOptions {
-       warning 'InvalidPackage'
+        abortOnError false
     }
 }
-
 
 repositories {
     mavenCentral()
@@ -37,4 +34,3 @@ dependencies {
     compile 'com.facebook.react:react-native:+'
     compile files('libs/DynatraceUEM.jar')
 }
-  
